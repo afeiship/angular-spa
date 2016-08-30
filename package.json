@@ -1,0 +1,22 @@
+{
+  "name": "angular-spa",
+  "version": "0.0.0",
+  "description": "Angular single page application start kit.",
+  "homepage": "https://github.com/afeiship/angular-spa",
+  "author": {
+    "name": "afei",
+    "email": "1290657123@qq.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-debug": "^2.1.2",
+    "gulp-inject": "^4.1.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-main-bower-files": "^1.5.3",
+    "gulp-ng-annotate": "^2.0.0",
+    "yargs": "^4.7.1"
+  }
+}
