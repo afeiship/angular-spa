@@ -18,6 +18,9 @@
       tmp: rootPath + '/.tmp',
       dist: rootPath + '/dist'
     },
+    sassOptions:{
+      style:'expanded'
+    },
     errorHandler:function(title) {
       return function(err) {
         gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
