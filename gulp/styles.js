@@ -1,14 +1,12 @@
 (function() {
 
-
   'use strict';
-  var path = require('path')
+
   var gulp = require('gulp');
   var config = require('./config');
   var argv = require('yargs').argv;
   var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*', 'stream-series']
+    pattern: ['gulp-*', 'gulp.*', 'del']
   });
 
-
-}());
+}())

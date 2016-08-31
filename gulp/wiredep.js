@@ -6,9 +6,16 @@
   var gulp = require('gulp');
   var config = require('./config');
   var argv = require('yargs').argv;
+  var wiredep = require('wiredep').stream;
   var $ = require('gulp-load-plugins')({
     pattern: ['gulp-*', 'stream-series']
   });
 
+
+  gulp.task('wiredep', function () {
+    gulp.src(path.join(config.path.src,'index.html'))
+      .pipe(wiredep())
+      .pipe(gulp.dest(config.path.dist));
+  });
 
 }());
