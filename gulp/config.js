@@ -18,10 +18,16 @@
       tmp: rootPath + '/.tmp',
       dist: rootPath + '/dist'
     },
-    sassOptions:{
-      style:'expanded'
+    sassOptions: {
+      style: 'expanded'
     },
-    errorHandler:function(title) {
+    htmlminOptions: {
+      removeEmptyAttributes: true,
+      removeAttributeQuotes: true,
+      collapseBooleanAttributes: false,
+      collapseWhitespace: true
+    },
+    errorHandler: function(title) {
       return function(err) {
         gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
         this.emit('end');

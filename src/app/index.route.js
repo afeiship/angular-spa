@@ -10,16 +10,16 @@
     $stateProvider
       .state('main', {
         url: '/main',
-        templateUrl: 'app/main/index.html',
+        templateUrl: 'app/controllers/main/index.html',
         controller: 'MainController',
         controllerAs: 'vm'
       })
       .state('errors', {
         url: '/errors',
-        templateUrl: 'app/errors/index.html',
+        templateUrl: 'app/controllers/errors/index.html',
         controller: 'ErrorsController',
         controllerAs: 'vm'
-      });;
+      });
     $urlRouterProvider.otherwise('/errors');
   }
 
