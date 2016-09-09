@@ -18,6 +18,7 @@
     return gulp.src(path.join(config.paths.dist, 'index.html'))
       .pipe($.useref(config.userefOptions))
       .pipe(jsFilter)
+      .pipe($.ngAnnotate())
       .pipe($.uglify()) // Minify any javascript sources
       .pipe($.rev()) // Rename the concatenated files
       .pipe(jsFilter.restore)
