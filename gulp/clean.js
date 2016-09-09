@@ -1,4 +1,4 @@
-(function () {
+(function() {
 
 
   'use strict';
@@ -11,8 +11,13 @@
 
 
   //clean
-  gulp.task('clean',function() {
+  gulp.task('clean', function() {
     return $.del('dist');
+  });
+
+
+  gulp.task('clean:app', function() {
+    return $.del('dist/app');
   });
 
 

@@ -14,14 +14,5 @@
     return config.appStream.css()
       .pipe(gulp.dest(path.join(config.paths.dist, '/app')));
   });
-
-  gulp.task('styles:dist', function() {
-    console.log(this.seq.slice(-1)[0]);
-    return config.appStream.css()
-      .pipe($.cleanCss({
-        debug:true
-      }))
-      .pipe(gulp.dest(path.join(config.paths.dist, '/styles')));
-  });
-
+  
 }())

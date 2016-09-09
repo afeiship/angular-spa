@@ -12,6 +12,14 @@
 
   gulp.task('build', ['clean'], function(callback) {
     return $.sequence(
+      [
+        'images',
+        'styles',
+        'scripts',
+      ],
+      'inject',
+      'useref',
+      'clean:app'
     )(callback);
   });
 

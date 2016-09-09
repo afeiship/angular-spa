@@ -38,6 +38,15 @@
     sassOptions: sassOptions,
     htmlminOptions: htmlminOptions,
     errorHandler: errorHandler,
+    angularTmplOptions: {
+      module: 'dacangRemix',
+      root: 'app'
+    },
+    userefOptions:{
+      transformPath: function(filePath) {
+        return filePath.replace('/src', '')
+      }
+    },
     appStream: {
       js: function() {
         return gulp.src([
