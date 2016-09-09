@@ -12,7 +12,6 @@
 
   gulp.task('images', function() {
     return gulp.src(path.join(config.paths.src, '/assets/images/**'))
-      //.pipe($.debug({title:'test::::--->'}))
       .pipe(gulp.dest(path.join(config.paths.dist, 'images')));
   });
 
