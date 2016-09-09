@@ -35,8 +35,4 @@
     }));
   });
 
-
-  gulp.task('default', ['serve']);
-
-
 }());
