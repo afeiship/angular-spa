@@ -1,0 +1,2 @@
+angular.module('dacangRemix').run(['$templateCache', function($templateCache) {$templateCache.put('app/controllers/errors/index.html','<section class="errors-view">\n  <h1>Errors view </h1>\n</section>\n');
+$templateCache.put('app/controllers/main/index.html','<section class="main-view">\n  <h1>Main view</h1>\n</section>\n');}]);

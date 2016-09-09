@@ -13,9 +13,9 @@
 
 
   gulp.task('wiredep', function () {
-    gulp.src(path.join(config.path.src,'index.html'))
+    gulp.src(path.join(config.paths.src,'index.html'))
       .pipe(wiredep())
-      .pipe(gulp.dest(config.path.dist));
+      .pipe(gulp.dest(config.paths.dist));
   });
 
 }());

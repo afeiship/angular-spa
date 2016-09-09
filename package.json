@@ -9,6 +9,8 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "browser-sync": "^2.15.0",
+    "browser-sync-spa": "^1.0.3",
     "del": "^2.2.1",
     "gulp": "^3.9.1",
     "gulp-angular-filesort": "^1.1.1",

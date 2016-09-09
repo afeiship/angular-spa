@@ -9,10 +9,8 @@
   var $ = require('gulp-load-plugins')({
     pattern: ['gulp-*', 'gulp.*', 'del']
   });
-
-
   module.exports = {
-    path: {
+    paths: {
       root: rootPath,
       src: rootPath + '/src',
       tmp: rootPath + '/.tmp',
