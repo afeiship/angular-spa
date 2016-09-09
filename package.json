@@ -17,6 +17,7 @@
     "gulp-angular-templatecache": "^2.0.0",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-bower-stream": "afeiship/gulp-bower-stream",
+    "gulp-clean-css": "^2.0.12",
     "gulp-concat": "^2.6.0",
     "gulp-debug": "^2.1.2",
     "gulp-filter": "^4.0.0",

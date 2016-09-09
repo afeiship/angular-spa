@@ -48,6 +48,10 @@
           .pipe($.angularFilesort());
       },
       css: function() {
+        var currentTask = gulp.seq.slice(-1)[0];
+        if (currentTask === 'styles:dist') {
+          sassOptions.style = 'compressed';
+        }
         return gulp.src([
             path.join(paths.src, '/app/**/*.scss')
           ])
