@@ -15,6 +15,7 @@
   // Static Server + watching scss/html files
   gulp.task('serve', ['watch'], function() {
     gulp.start([
+      'images',
       'styles',
       'scripts',
       'inject'
@@ -24,7 +25,8 @@
         baseDir: path.join(config.paths.dist),
         routes: {
           '/bower_components': path.join(config.paths.root, 'bower_components'),
-          '/src/app': path.join(config.paths.dist, 'app')
+          '/src/app': path.join(config.paths.dist, 'app'),
+          '/src/assets': path.join(config.paths.src, 'assets')
         }
       }
     });

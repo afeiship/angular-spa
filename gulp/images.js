@@ -12,7 +12,7 @@
 
   gulp.task('images', function() {
     return gulp.src(path.join(config.paths.src, '/assets/images/**'))
-      .pipe(gulp.dest(path.join(config.paths.dist, 'images')));
+      .pipe(gulp.dest(path.join(config.paths.dist, '/assets/images')));
   });
 
 }())

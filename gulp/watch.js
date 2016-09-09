@@ -14,11 +14,14 @@
 
   //watch
   gulp.task('watch', function() {
+    gulp.watch(path.join(config.paths.src, '/assets/images'), ['images']);
     gulp.watch(path.join(config.paths.src, '/app/**/*.scss'), ['styles']);
+
     gulp.watch([
       path.join(config.paths.src, '/app/**/*.js'),
       path.join(config.paths.src, '/app/**/*.html')
     ], ['scripts']);
+
     gulp.watch([
       path.join(config.paths.src, 'index.html'),
       path.join(config.paths.dist, 'index.html')
