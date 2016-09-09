@@ -13,7 +13,7 @@
 
 
   gulp.task('wiredep', function () {
-    gulp.src(path.join(config.paths.src,'index.html'))
+    return gulp.src(path.join(config.paths.src,'index.html'))
       .pipe(wiredep())
       .pipe(gulp.dest(config.paths.dist));
   });

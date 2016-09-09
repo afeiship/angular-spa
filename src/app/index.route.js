@@ -20,7 +20,7 @@
         controller: 'ErrorsController',
         controllerAs: 'vm'
       });
-    $urlRouterProvider.otherwise('/errors');
+    $urlRouterProvider.otherwise('/main');
   }
 
 })();

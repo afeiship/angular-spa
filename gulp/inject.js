@@ -15,23 +15,28 @@
     addRootSlash: true
   };
 
-  gulp.task('inject-bower',['tmpl-cache','wiredep']);
   //for build:
-  gulp.task('inject-scripts', ['inject-bower'], function() {
-    return gulp.src(path.join(config.paths.dist, './index.html'))
-      .pipe($.inject(appStream.js, injectOptions))
+  gulp.task('inject-scripts', function() {
+    return gulp.src(path.join(config.paths.dist, 'index.html'))
+      .pipe($.inject(appStream.js(), injectOptions))
       .pipe(gulp.dest('dist'));
   });
 
 
-  gulp.task('inject-styles', ['inject-scripts'], function() {
-    return gulp.src(path.join(config.paths.dist, './index.html'))
-      .pipe($.inject(appStream.css, injectOptions))
+  gulp.task('inject-styles', function() {
+    return gulp.src(path.join(config.paths.dist, 'index.html'))
+      .pipe($.inject(appStream.css(), injectOptions))
       .pipe(gulp.dest('dist'));
   });
 
 
-  gulp.task('inject', ['inject-styles']);
+  gulp.task('inject', function(callback) {
+    return $.sequence(
+      'wiredep',
+      'inject-scripts',
+      'inject-styles'
+    )(callback);
+  });
 
 
 

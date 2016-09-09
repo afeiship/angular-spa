@@ -14,6 +14,11 @@
 
   // Static Server + watching scss/html files
   gulp.task('serve', ['watch'], function() {
+    gulp.start([
+      'styles',
+      'scripts',
+      'inject'
+    ]);
     browserSync.init({
       server: {
         baseDir: path.join(config.paths.dist),
@@ -23,8 +28,6 @@
         }
       }
     });
-
-
     browserSync.use(spa({
       selector: '[ng-app]' // Only needed for angular apps
     }));

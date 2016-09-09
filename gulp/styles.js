@@ -12,11 +12,7 @@
   });
 
   gulp.task('styles', function() {
-    return gulp.src([
-        path.join(config.paths.src, '/app/**/*.scss')
-      ]).pipe($.concat('index.scss'))
-      .pipe($.sass(config.sassOptions)).on('error', config.errorHandler('Sass'))
-      .pipe($.autoprefixer()).on('error', config.errorHandler('Autoprefixer'))
+    return appStream.css()
       .pipe(gulp.dest(path.join(config.paths.dist, '/app')));
   })
 
