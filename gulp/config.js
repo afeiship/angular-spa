@@ -41,14 +41,17 @@
     appStream: {
       js: function() {
         return gulp.src([
-          path.join(paths.src, 'app/**/*.js'),
-          path.join(paths.src, 'partials/*.js')
-        ]).pipe($.angularFilesort());
+            path.join(paths.src, 'app/**/*.js'),
+            path.join(paths.src, 'partials/*.js')
+          ])
+          .pipe($.ngAnnotate())
+          .pipe($.angularFilesort());
       },
       css: function() {
         return gulp.src([
             path.join(paths.src, '/app/**/*.scss')
-          ]).pipe($.concat('index.scss'))
+          ])
+          .pipe($.concat('index.scss'))
           .pipe($.sass(sassOptions)).on('error', errorHandler('Sass'))
           .pipe($.autoprefixer()).on('error', errorHandler('Autoprefixer'))
       }
