@@ -19,6 +19,7 @@
       ],
       'inject',
       'useref',
+      'htmlmin'
       'clean:app'
     )(callback);
   });
