@@ -2,7 +2,7 @@
 
 
   'use strict';
-  var path = require('path')
+  var path = require('path');
   var gulp = require('gulp');
   var config = require('./config');
   var argv = require('yargs').argv;
@@ -21,5 +21,5 @@
     return config.appStream.js()
       .pipe(gulp.dest(path.join(config.paths.dist, 'app')));
   });
-  
+
 }());
