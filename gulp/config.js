@@ -57,7 +57,7 @@
           ])
           .pipe($.concat('index.scss'))
           .pipe($.sass(sassOptions)).on('error', errorHandler('Sass'))
-          .pipe($.autoprefixer()).on('error', errorHandler('Autoprefixer'))
+          .pipe($.autoprefixer('last 2 version')).on('error', errorHandler('Autoprefixer'))
       }
     }
   };
