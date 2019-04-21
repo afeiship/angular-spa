@@ -1,6 +1,4 @@
 (function() {
-
-
   'use strict';
   var path = require('path');
   var gulp = require('gulp');
@@ -11,11 +9,9 @@
     pattern: ['gulp-*', 'stream-series']
   });
 
-
-  gulp.task('wiredep', function () {
-    return gulp.src(path.join(config.paths.src,'index.html'))
-      .pipe(wiredep())
+  gulp.task('wiredep', function() {
+    return gulp
+      .src(path.join(config.paths.src, 'index.html'))
       .pipe(gulp.dest(config.paths.dist));
   });
-
-}());
+})();

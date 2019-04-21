@@ -1,5 +1,4 @@
 (function() {
-
   'use strict';
 
   var path = require('path');
@@ -11,8 +10,8 @@
   });
 
   gulp.task('styles', function() {
-    return config.appStream.css()
+    return config.appStream
+      .css()
       .pipe(gulp.dest(path.join(config.paths.dist, '/app')));
   });
-  
-}())
+})();

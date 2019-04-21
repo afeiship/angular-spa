@@ -364,4 +364,4 @@ Uc)}))})(window);!window.angular.$$csp().noInlineStyle&&window.angular.element(d
 //# sourceMappingURL=angular-ui-router.min.js.map
 
 
-// console.log('test 124')
+// console.log('vendor init!')

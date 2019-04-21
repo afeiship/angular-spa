@@ -47,6 +47,11 @@
   });
 
   gulp.task('inject', function(callback) {
-    return $.sequence('wiredep', 'inject-vendors', 'inject-scripts', 'inject-styles')(callback);
+    return $.sequence(
+      'wiredep',
+      'inject-vendors',
+      'inject-scripts',
+      'inject-styles'
+    )(callback);
   });
 })();
