@@ -1,5 +1,4 @@
 (function() {
-
   'use strict';
 
   var rootPath = process.cwd();
@@ -30,8 +29,7 @@
       gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
       this.emit('end');
     };
-  }
-
+  };
 
   module.exports = {
     paths: paths,
@@ -42,14 +40,21 @@
       module: 'dacangRemix',
       root: 'app'
     },
-    userefOptions:{
+    userefOptions: {
       transformPath: function(filePath) {
-        return filePath.replace('/src', '')
+        return filePath.replace('/src', '');
       }
     },
     appStream: {
+      vendors: function() {
+        return gulp
+          .src([path.join(paths.src, 'vendors/vendors.js')])
+          .pipe($.ngAnnotate())
+          .pipe($.angularFilesort());
+      },
       js: function() {
-        return gulp.src([
+        return gulp
+          .src([
             path.join(paths.src, 'app/**/*.js'),
             path.join(paths.src, 'partials/*.js')
           ])
@@ -61,15 +66,14 @@
         if (currentTask === 'styles:dist') {
           sassOptions.style = 'compressed';
         }
-        return gulp.src([
-            path.join(paths.src, '/app/**/*.scss')
-          ])
+        return gulp
+          .src([path.join(paths.src, '/app/**/*.scss')])
           .pipe($.concat('index.scss'))
-          .pipe($.sass(sassOptions)).on('error', errorHandler('Sass'))
-          .pipe($.autoprefixer('last 2 version')).on('error', errorHandler('Autoprefixer'))
+          .pipe($.sass(sassOptions))
+          .on('error', errorHandler('Sass'))
+          .pipe($.autoprefixer('last 2 version'))
+          .on('error', errorHandler('Autoprefixer'));
       }
     }
   };
-
-
-}());
+})();

@@ -5,11 +5,6 @@
   <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <meta name="format-detection" content="telephone=no">
   <title>dacangRemix</title>
-  <!-- build:css styles/vendor.css -->
-  <!-- bower:css -->
-  <!-- endbower -->
-  <!-- endbuild -->
-
   <!-- build:css styles/app.css -->
   <!-- app:css -->
   <!-- app styles will go here... -->
@@ -19,9 +14,10 @@
 <body>
   <div ui-view></div>
 
-  <!-- build:js(src) scripts/vendor.js -->
-  <!-- bower:js -->
-  <!-- endbower -->
+  <!-- build:js(src) scripts/vendors.js -->
+  <!-- inject:vendors:js -->
+  <!-- app vendors scripts will go here... -->
+  <!-- endinject -->
   <!-- endbuild -->
 
   <!-- build:js(src) scripts/app.js -->

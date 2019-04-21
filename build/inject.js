@@ -1,6 +1,5 @@
 (function() {
-
-  'use strict';
+  ('use strict');
   var path = require('path');
   var gulp = require('gulp');
   var config = require('./config');
@@ -15,28 +14,39 @@
   };
 
   //for build:
+  gulp.task('inject-vendors', function() {
+    return gulp
+      .src(path.join(config.paths.dist, 'index.html'))
+      .pipe(
+        $.inject(
+          config.appStream.vendors(),
+          Object.assign(
+            {
+              starttag: '<!-- inject:vendors:{{ext}} -->'
+            },
+            injectOptions
+          )
+        )
+      )
+      .pipe(gulp.dest('dist'));
+  });
+
+  //for build:
   gulp.task('inject-scripts', function() {
-    return gulp.src(path.join(config.paths.dist, 'index.html'))
+    return gulp
+      .src(path.join(config.paths.dist, 'index.html'))
       .pipe($.inject(config.appStream.js(), injectOptions))
       .pipe(gulp.dest('dist'));
   });
 
-
   gulp.task('inject-styles', function() {
-    return gulp.src(path.join(config.paths.dist, 'index.html'))
+    return gulp
+      .src(path.join(config.paths.dist, 'index.html'))
       .pipe($.inject(config.appStream.css(), injectOptions))
       .pipe(gulp.dest('dist'));
   });
 
-
   gulp.task('inject', function(callback) {
-    return $.sequence(
-      'wiredep',
-      'inject-scripts',
-      'inject-styles'
-    )(callback);
+    return $.sequence('wiredep', 'inject-vendors', 'inject-scripts', 'inject-styles')(callback);
   });
-
-
-
-}());
+})();
